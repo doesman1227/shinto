@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>神道と神社</title>
+<meta name="description" content="八百万の神の国・日本。神道の考え方と歴史、神社のしくみ、全国に広がる主要16系統の神社、参拝作法までをわかりやすく紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1e7; --bg-2:#efe7d6; --card:#fbf8f1; --ink:#221d17; --ink-2:#5b5247; --line:#d9ccb4;
+  --shu:#c0392b; --shu-deep:#9a2a1f; --moss:#4f6b3a; --gold:#a8812f; --sky:#2f5d73;
+  --shadow:0 1px 2px rgba(60,40,10,.06),0 6px 20px rgba(60,40,10,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#171412; --bg-2:#1f1b17; --card:#231f1a; --ink:#ede5d6; --ink-2:#b3a896; --line:#3a332b;
+    --shu:#e0604f; --shu-deep:#f07a69; --moss:#93b27a; --gold:#d3aa55; --sky:#7fb3cc;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171412; --bg-2:#1f1b17; --card:#231f1a; --ink:#ede5d6; --ink-2:#b3a896; --line:#3a332b;
+  --shu:#e0604f; --shu-deep:#f07a69; --moss:#93b27a; --gold:#d3aa55; --sky:#7fb3cc;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Noto Serif JP",serif;line-height:1.4;margin:0}
+a{color:var(--shu)}
+img,svg,iframe{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- header ---------- */
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;gap:16px;height:56px}
+.logo{font-family:"Noto Serif JP",serif;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.logo svg{width:26px;height:26px}
+nav.links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav.links::-webkit-scrollbar{display:none}
+nav.links a{color:var(--ink-2);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:6px;white-space:nowrap}
+nav.links a:hover{background:var(--bg-2);color:var(--ink)}
+.back{font-size:13px;color:var(--ink-2);text-decoration:none;white-space:nowrap}
+.back:hover{color:var(--shu)}
+.theme-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;width:36px;height:36px;cursor:pointer;flex:none;font-size:16px}
+@media (max-width:760px){nav.links{display:none}header .back{margin-left:auto}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:72px}
+.hero .kicker{color:var(--shu);letter-spacing:.3em;font-size:13px;font-weight:700}
+.hero h1{font-size:clamp(36px,6vw,68px);word-break:keep-all;font-weight:800;letter-spacing:.06em;margin:12px 0 20px}
+.hero h1 span{color:var(--shu)}
+.hero p.lead{font-size:17px;color:var(--ink-2);max-width:34em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px}
+.btn.primary{background:var(--shu);color:#fff}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--card)}
+.hero-art{justify-self:center;width:100%;max-width:400px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;max-width:520px}
+.stat{border-left:3px solid var(--shu);padding:2px 0 2px 12px}
+.stat b{font-family:"Noto Serif JP",serif;font-size:26px;display:block;line-height:1.2}
+.stat small{color:var(--ink-2);font-size:12px}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:48px}.hero-art{max-width:280px;order:-1}}
+
+/* ---------- sections ---------- */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+section:nth-of-type(even){background:var(--bg-2)}
+.sec-head{margin-bottom:40px;max-width:720px}
+.sec-head .num{font-family:"Noto Serif JP",serif;color:var(--shu);font-size:14px;letter-spacing:.2em;font-weight:700}
+.sec-head h2{font-size:clamp(28px,4.4vw,40px);margin:6px 0 14px;letter-spacing:.04em}
+.sec-head p{color:var(--ink-2);margin:0}
+@media (max-width:600px){section{padding:60px 0}}
+
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;box-shadow:var(--shadow)}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{margin:0;color:var(--ink-2);font-size:15px}
+.card .tag{display:inline-block;font-size:12px;color:var(--shu);border:1px solid currentColor;border-radius:999px;padding:0 10px;margin-bottom:10px}
+
+.note{font-size:13px;color:var(--ink-2);margin-top:20px}
+.pull{font-family:"Noto Serif JP",serif;font-size:clamp(20px,3vw,26px);border-left:4px solid var(--shu);padding:6px 0 6px 20px;margin:0 0 36px;max-width:780px}
+
+/* ---------- timeline ---------- */
+.timeline{position:relative;margin:0;padding:0;list-style:none}
+.timeline::before{content:"";position:absolute;left:118px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{display:grid;grid-template-columns:100px 1fr;gap:36px;padding:0 0 26px;position:relative}
+.timeline li::before{content:"";position:absolute;left:112px;top:9px;width:14px;height:14px;border-radius:50%;background:var(--bg-2);border:3px solid var(--shu)}
+.timeline .era{font-family:"Noto Serif JP",serif;font-weight:700;text-align:right;color:var(--shu-deep);font-size:15px}
+.timeline h4{font-size:18px;margin-bottom:4px}
+.timeline p{margin:0;color:var(--ink-2);font-size:15px}
+@media (max-width:600px){
+  .timeline::before{left:6px}
+  .timeline li{grid-template-columns:1fr;gap:2px;padding-left:30px}
+  .timeline li::before{left:0}
+  .timeline .era{text-align:left}
+}
+
+/* ---------- precinct diagram ---------- */
+.precinct{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
+.precinct svg{width:100%;height:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.precinct svg text{font-family:"Noto Sans JP",sans-serif;fill:var(--ink)}
+.parts{display:flex;flex-direction:column;gap:10px}
+.part{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid transparent;cursor:default;transition:.15s}
+.part:hover,.part.on{background:var(--card);border-color:var(--line)}
+.part .n{width:28px;height:28px;border-radius:50%;background:var(--shu);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.part b{display:block}
+.part span{color:var(--ink-2);font-size:14px}
+.hot{cursor:pointer}
+.hot circle{fill:var(--shu)}
+.hot text{fill:#fff !important;font-weight:700;font-size:13px}
+.hot.on circle{fill:var(--ink)}
+@media (max-width:820px){.precinct{grid-template-columns:1fr}}
+
+/* ---------- lineages ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filters button{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 14px;border-radius:999px;cursor:pointer}
+.filters button.on{background:var(--shu);border-color:var(--shu);color:#fff}
+.lin{position:relative;overflow:hidden;display:flex;flex-direction:column}
+.lin .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
+.lin h3{font-size:22px}
+.lin .no{font-family:"Noto Serif JP",serif;color:var(--line);font-size:34px;font-weight:800;line-height:1}
+.lin dl{margin:8px 0 12px;font-size:14px;display:grid;grid-template-columns:auto 1fr;gap:2px 12px}
+.lin dt{color:var(--ink-2)}
+.lin dd{margin:0}
+.lin p{font-size:14px}
+.lin .chips{margin-top:auto;padding-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;background:var(--bg-2);color:var(--ink-2);padding:2px 10px;border-radius:999px}
+section:nth-of-type(even) .chip{background:var(--bg)}
+.lin[hidden]{display:none}
+
+/* ---------- table ---------- */
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:15px}
+.tbl th,.tbl td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-family:"Noto Serif JP",serif;font-size:20px;white-space:nowrap;color:var(--shu-deep)}
+.tbl tr:last-child td,.tbl tr:last-child th{border-bottom:none}
+.tbl td small{color:var(--ink-2)}
+@media (max-width:600px){.tbl th,.tbl td{display:block;border:none;padding:6px 16px}.tbl tr{display:block;border-bottom:1px solid var(--line);padding:10px 0}}
+
+/* ---------- steps ---------- */
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.steps{grid-template-columns:1fr}}
+.step{counter-increment:s;position:relative;padding-top:30px}
+.step::before{content:counter(s,cjk-ideographic);position:absolute;top:18px;right:20px;font-family:"Noto Serif JP",serif;font-size:40px;color:var(--line);font-weight:800}
+.bow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.bow div{flex:1 1 120px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 8px}
+.bow b{font-family:"Noto Serif JP",serif;font-size:28px;color:var(--shu);display:block}
+.bow small{color:var(--ink-2)}
+
+/* ---------- calendar ---------- */
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:900px){.cal{grid-template-columns:repeat(2,1fr)}}
+.cal .card{padding:16px 18px}
+.cal .m{font-family:"Noto Serif JP",serif;color:var(--shu);font-weight:700;font-size:14px}
+.cal h4{font-size:17px;margin:2px 0 4px}
+
+/* ---------- video / refs ---------- */
+.video{aspect-ratio:16/9;width:100%;border:0;border-radius:14px;background:#000;box-shadow:var(--shadow)}
+.refs{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.refs li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.refs a{font-weight:700;text-decoration:none}
+.refs small{display:block;color:var(--ink-2)}
+
+footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="トップへ">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="var(--shu)"><rect x="3" y="7" width="34" height="4" rx="1"/><rect x="6" y="14" width="28" height="3"/><rect x="10" y="10" width="4" height="27"/><rect x="26" y="10" width="4" height="27"/><rect x="18.5" y="14" width="3" height="6"/></g></svg>
+      神道と神社
+    </a>
+    <nav class="links" aria-label="ページ内リンク">
+      <a href="#shinto">神道とは</a>
+      <a href="#history">歴史</a>
+      <a href="#precinct">境内</a>
+      <a href="#lineage">16系統</a>
+      <a href="#shago">社号</a>
+      <a href="#sanpai">参拝作法</a>
+      <a href="#matsuri">祭りと儀礼</a>
+    </nav>
+    <a class="back" href="../">← m-note トップ</a>
+    <button class="theme-btn" id="themeBtn" aria-label="表示テーマを切り替え">◐</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kicker">SHINTO &amp; JINJA</div>
+      <h1>八百万の<span>神</span>の国</h1>
+      <p class="lead">山や森、岩や滝、そして祖先や偉人。日本人は古くから身のまわりのあらゆるものに神を感じ、祈りを捧げてきました。神道の考え方と歴史、神社のしくみ、そして全国に広がる神社の「系統」をたどります。</p>
+      <div class="btns">
+        <a class="btn primary" href="#lineage">神社の16系統を見る</a>
+        <a class="btn ghost" href="#sanpai">参拝の作法</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>約8万社</b><small>宗教法人の神社数</small></div>
+        <div class="stat"><b>10万超</b><small>小祠を含めた推計</small></div>
+        <div class="stat"><b>2,861社</b><small>延喜式に載る式内社</small></div>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="鳥居と太陽のイラスト">
+      <circle cx="200" cy="170" r="120" fill="var(--shu)" opacity=".12"/>
+      <circle cx="200" cy="170" r="78" fill="var(--shu)" opacity=".18"/>
+      <path d="M40 90 Q200 60 360 90 L356 110 Q200 84 44 110 Z" fill="var(--shu)"/>
+      <rect x="60" y="128" width="280" height="16" fill="var(--shu)"/>
+      <rect x="100" y="104" width="22" height="260" fill="var(--shu)"/>
+      <rect x="278" y="104" width="22" height="260" fill="var(--shu)"/>
+      <rect x="191" y="144" width="18" height="36" fill="var(--shu)"/>
+      <rect x="92" y="352" width="38" height="14" fill="var(--ink)" opacity=".8"/>
+      <rect x="270" y="352" width="38" height="14" fill="var(--ink)" opacity=".8"/>
+      <line x1="20" y1="366" x2="380" y2="366" stroke="var(--ink)" stroke-width="2" opacity=".35"/>
+      <g stroke="var(--ink)" stroke-width="2" opacity=".25"><line x1="200" y1="366" x2="170" y2="400"/><line x1="200" y1="366" x2="230" y2="400"/></g>
+    </svg>
+  </div>
+</div>
+
+<!-- ===== 1 神道とは ===== -->
+<section id="shinto">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">一 ／ WHAT IS SHINTO</div>
+      <h2>神道とは</h2>
+      <p>神道は、日本の伝統的な神まつりの総称です。開祖も唯一の経典も持たず、自然や祖先への感謝と畏れを、まつり（祭祀）という形で受け継いできました。</p>
+    </div>
+    <p class="pull">神は「いつもそこにいる存在」ではなく、まつりのたびに山や岩、木などの依り代へと招き迎えるもの──それが古い神観念のかたちでした。</p>
+    <div class="grid g3">
+      <div class="card"><span class="tag">神観念</span><h3>八百万の神</h3><p>太陽・風・山などの<strong>自然神</strong>、氏神や田の神などの<strong>文化神</strong>、菅原道真のように死後に祀られた<strong>人神</strong>。無数の神々が共存します。</p></div>
+      <div class="card"><span class="tag">二面性</span><h3>和魂と荒魂</h3><p>神は恵みをもたらす穏やかな面（和魂）と、災いや祟りをもたらす荒々しい面（荒魂）をあわせ持つと考えられてきました。</p></div>
+      <div class="card"><span class="tag">倫理</span><h3>清浄と正直</h3><p>穢れを嫌い清らかさを尊ぶのが神道の核。禊（みそぎ）や祓（はらえ）で心身を清め、「正直」「素直」な心で神に向き合います。</p></div>
+      <div class="card"><span class="tag">依り代</span><h3>磐座・神籬</h3><p>神が降り立つ岩（磐座）や常緑樹（神籬）。奈良の大神神社のように、本殿を持たず三輪山そのものを御神体とする神社も残ります。</p></div>
+      <div class="card"><span class="tag">古典</span><h3>記紀と延喜式</h3><p>『古事記』（712年）、『日本書紀』（720年）の神話、全国の官社を記した『延喜式』（927年）。後世、神道の聖典的な位置づけを得ました。</p></div>
+      <div class="card"><span class="tag">現代</span><h3>暮らしの中の神道</h3><p>初詣、七五三、厄祓い、地鎮祭、商売繁盛の祈願。宗教と意識されないほど、日本人の生活に溶け込んでいます。</p></div>
+    </div>
+    <h3 style="font-size:22px;margin:48px 0 16px">神道のかたち</h3>
+    <div class="grid g4">
+      <div class="card"><h3>神社神道</h3><p>神社を中心とした祭祀と信仰。現在の神道の中心。</p></div>
+      <div class="card"><h3>皇室神道</h3><p>宮中三殿などで天皇が行う宮中祭祀。</p></div>
+      <div class="card"><h3>教派神道</h3><p>黒住教・金光教など、教祖や教義を持つ幕末以降の教団。</p></div>
+      <div class="card"><h3>民俗神道</h3><p>田の神、道祖神、屋敷神など地域に根ざした民間信仰。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 歴史 ===== -->
+<section id="history">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">二 ／ HISTORY</div>
+      <h2>神道と神社の歩み</h2>
+      <p>神道は時代ごとに仏教・儒教・道教と交わりながら、その姿を変えてきました。「日本古来から変わらない宗教」というイメージ自体、近代に形づくられた面があります。</p>
+    </div>
+    <ol class="timeline">
+      <li><div class="era">古代以前</div><div><h4>自然への畏敬と臨時の祭場</h4><p>山・岩・森に神が宿るとされ、祭りのたびに磐座や神籬を設けて神を迎えた。沖ノ島や三輪山には古い祭祀の痕跡が残る。</p></div></li>
+      <li><div class="era">7〜8世紀</div><div><h4>律令祭祀と常設の社殿</h4><p>神祇官が置かれ、国家が全国の神社に幣帛を配る班幣制度が整う。社殿の常設化が進み、伊勢神宮の式年遷宮も始まる。記紀が編纂される。</p></div></li>
+      <li><div class="era">10世紀</div><div><h4>『延喜式』神名帳</h4><p>国家の祭祀にあずかる官社2,861社（3,132座）が記載される。これらは「式内社」と呼ばれ、今も由緒の証とされる。</p></div></li>
+      <li><div class="era">平安〜中世</div><div><h4>神仏習合</h4><p>神は仏が姿を変えて現れたもの（本地垂迹）とされ、神社と寺院が一体化。八幡神は「八幡大菩薩」と呼ばれた。伊勢神道など神道思想も体系化される。</p></div></li>
+      <li><div class="era">15世紀</div><div><h4>吉田神道</h4><p>吉田兼倶が仏教から独立した神道を唱え、全国の神社に大きな影響力を持つ。</p></div></li>
+      <li><div class="era">江戸時代</div><div><h4>儒家神道と国学</h4><p>儒学と結びついた神道説が広まり、本居宣長らの国学、平田篤胤の復古神道へとつながる。</p></div></li>
+      <li><div class="era">1868〜</div><div><h4>神仏分離と国家神道</h4><p>明治政府の神仏判然令で神と仏が切り離され、官幣社・国幣社などの近代社格制度が定められる。神社は国家の管理下に置かれた。</p></div></li>
+      <li><div class="era">1945〜</div><div><h4>戦後の再出発</h4><p>神道指令により国家神道は解体。1946年に神社本庁が設立され、神社は宗教法人として新たな道を歩む。</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 3 境内 ===== -->
+<section id="precinct">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">三 ／ PRECINCT</div>
+      <h2>神社の境内を歩く</h2>
+      <p>鳥居をくぐった先は神域。番号にカーソルを合わせると、それぞれの役割がわかります。</p>
+    </div>
+    <div class="precinct">
+      <svg viewBox="0 0 520 560" role="img" aria-label="神社境内の配置図">
+        <!-- 鎮守の森 -->
+        <g fill="var(--moss)" opacity=".22">
+          <circle cx="60" cy="80" r="46"/><circle cx="120" cy="40" r="40"/><circle cx="460" cy="70" r="48"/><circle cx="400" cy="36" r="36"/>
+          <circle cx="40" cy="300" r="40"/><circle cx="480" cy="300" r="40"/><circle cx="30" cy="470" r="34"/><circle cx="490" cy="470" r="34"/>
+        </g>
+        <!-- 参道 -->
+        <rect x="235" y="190" width="50" height="360" fill="var(--line)" opacity=".7"/>
+        <line x1="260" y1="200" x2="260" y2="545" stroke="var(--ink-2)" stroke-dasharray="4 6" opacity=".6"/>
+        <!-- 本殿 -->
+        <rect x="200" y="30" width="120" height="70" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M188 38 L260 12 L332 38" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <text x="260" y="72" text-anchor="middle" font-size="15">本殿</text>
+        <!-- 拝殿 -->
+        <rect x="180" y="118" width="160" height="66" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+        <text x="260" y="157" text-anchor="middle" font-size="15">拝殿</text>
+        <!-- 摂末社 -->
+        <rect x="72" y="140" width="60" height="40" rx="3" fill="var(--card)" stroke="var(--ink-2)"/>
+        <text x="102" y="165" text-anchor="middle" font-size="12">摂末社</text>
+        <!-- 神楽殿 -->
+        <rect x="370" y="215" width="90" height="60" rx="3" fill="var(--card)" stroke="var(--ink-2)"/>
+        <text x="415" y="250" text-anchor="middle" font-size="13">神楽殿</text>
+        <!-- 社務所 -->
+        <rect x="370" y="330" width="90" height="56" rx="3" fill="var(--card)" stroke="var(--ink-2)"/>
+        <text x="415" y="363" text-anchor="middle" font-size="12">社務所</text>
+        <!-- 手水舎 -->
+        <rect x="72" y="330" width="90" height="56" rx="3" fill="var(--card)" stroke="var(--sky)" stroke-width="2"/>
+        <rect x="90" y="350" width="54" height="18" rx="2" fill="var(--sky)" opacity=".35"/>
+        <text x="117" y="402" text-anchor="middle" font-size="12">手水舎</text>
+        <!-- 狛犬 -->
+        <circle cx="215" cy="215" r="11" fill="var(--gold)" opacity=".8"/><circle cx="305" cy="215" r="11" fill="var(--gold)" opacity=".8"/>
+        <text x="186" y="219" text-anchor="end" font-size="12">狛犬</text>
+        <!-- 鳥居 -->
+        <g fill="var(--shu)"><rect x="200" y="470" width="120" height="8"/><rect x="210" y="484" width="100" height="5"/><rect x="220" y="474" width="8" height="60"/><rect x="292" y="474" width="8" height="60"/></g>
+        <!-- hotspots -->
+        <g class="hot" data-k="torii"><circle cx="345" cy="500" r="14"/><text x="345" y="505" text-anchor="middle">1</text></g>
+        <g class="hot" data-k="sando"><circle cx="300" cy="420" r="14"/><text x="300" y="425" text-anchor="middle">2</text></g>
+        <g class="hot" data-k="temizu"><circle cx="175" cy="330" r="14"/><text x="175" y="335" text-anchor="middle">3</text></g>
+        <g class="hot" data-k="koma"><circle cx="330" cy="215" r="14"/><text x="330" y="220" text-anchor="middle">4</text></g>
+        <g class="hot" data-k="haiden"><circle cx="355" cy="140" r="14"/><text x="355" y="145" text-anchor="middle">5</text></g>
+        <g class="hot" data-k="honden"><circle cx="340" cy="60" r="14"/><text x="340" y="65" text-anchor="middle">6</text></g>
+        <g class="hot" data-k="kagura"><circle cx="460" cy="210" r="14"/><text x="460" y="215" text-anchor="middle">7</text></g>
+        <g class="hot" data-k="massha"><circle cx="72" cy="135" r="14"/><text x="72" y="140" text-anchor="middle">8</text></g>
+      </svg>
+      <div class="parts" id="parts">
+        <div class="part" data-k="torii"><div class="n">1</div><div><b>鳥居</b><span>俗界と神域を分ける門。くぐる前に一礼を。</span></div></div>
+        <div class="part" data-k="sando"><div class="n">2</div><div><b>参道</b><span>鳥居から社殿へ続く道。中央は「正中」と呼ばれる神の通り道なので、端を歩くのが作法。</span></div></div>
+        <div class="part" data-k="temizu"><div class="n">3</div><div><b>手水舎</b><span>参拝前に手と口を清める場所。禊を簡略化したもの。</span></div></div>
+        <div class="part" data-k="koma"><div class="n">4</div><div><b>狛犬</b><span>神前を守る一対の像。口を開けた「阿」と閉じた「吽」。稲荷ならキツネ、春日ならシカなど神使の像もある。</span></div></div>
+        <div class="part" data-k="haiden"><div class="n">5</div><div><b>拝殿</b><span>参拝者が祈りを捧げる建物。賽銭箱と鈴がある。</span></div></div>
+        <div class="part" data-k="honden"><div class="n">6</div><div><b>本殿</b><span>御神体を納め、神が鎮まる最も神聖な建物。通常は立ち入れない。</span></div></div>
+        <div class="part" data-k="kagura"><div class="n">7</div><div><b>神楽殿</b><span>神に奉納する神楽や舞を演じる舞台。</span></div></div>
+        <div class="part" data-k="massha"><div class="n">8</div><div><b>摂社・末社</b><span>主祭神にゆかりのある神や、ほかの神々を祀る境内の小さな社。</span></div></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:22px;margin:56px 0 16px">代表的な本殿の建築様式</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag">平入・直線的</span><h3>神明造</h3><p>伊勢神宮に代表される最も古い様式の一つ。高床式倉庫に由来し、茅葺の直線的な屋根。</p></div>
+      <div class="card"><span class="tag">妻入・古式</span><h3>大社造</h3><p>出雲大社に代表される。正方形の平面で、中央に心御柱を持つ。</p></div>
+      <div class="card"><span class="tag">平入・最多</span><h3>流造</h3><p>前方の屋根が長く流れる形。上賀茂・下鴨神社など、全国で最も多い様式。</p></div>
+      <div class="card"><span class="tag">妻入・小規模</span><h3>春日造</h3><p>春日大社に代表される。正面に庇がつく小ぶりな社殿で、近畿地方に多い。</p></div>
+      <div class="card"><span class="tag">二棟連結</span><h3>八幡造</h3><p>宇佐神宮・石清水八幡宮に見られる、前後二棟を連結した形式。</p></div>
+      <div class="card"><span class="tag">複合・華麗</span><h3>権現造</h3><p>本殿と拝殿を石の間でつなぐ。日光東照宮など豪華な装飾で知られる。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 16系統 ===== -->
+<section id="lineage">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">四 ／ LINEAGES</div>
+      <h2>全国に広がる神社の16系統</h2>
+      <p>近所の「八幡神社」も「稲荷神社」も、総本社から神の分霊（わけみたま）を迎えた勧請（かんじょう）によって全国に広がりました。名前を見れば、どんな神が祀られているかがわかります。</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="ご利益で絞り込み">
+      <button class="on" data-f="all">すべて</button>
+      <button data-f="勝負">勝負・武運</button>
+      <button data-f="商売">商売・豊穣</button>
+      <button data-f="学業">学業</button>
+      <button data-f="厄除">厄除・防災</button>
+      <button data-f="海">航海・水</button>
+      <button data-f="縁結">縁結び・家内安全</button>
+    </div>
+    <div class="grid g3" id="linGrid"></div>
+    <p class="note">※ 祭神・ご利益は代表的なものです。同じ系統でも神社によって祀る神や由緒が異なります。</p>
+  </div>
+</section>
+
+<!-- ===== 5 社号 ===== -->
+<section id="shago">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">五 ／ TITLES</div>
+      <h2>「神宮」「大社」「神社」── 社号のちがい</h2>
+      <p>神社の名前の最後につく「社号」にも意味があります。これを知れば神社めぐりがもっと楽しくなります。</p>
+    </div>
+    <table class="tbl">
+      <tr><th>神宮</th><td>皇室の祖先神や天皇を祀る、特に格式の高い神社。単に「神宮」といえば伊勢神宮を指す。<br><small>例：明治神宮、平安神宮、橿原神宮、鹿島神宮、香取神宮</small></td></tr>
+      <tr><th>宮</th><td>皇族や、歴史上の人物・特定の神を祀る神社に多い。<br><small>例：太宰府天満宮、日光東照宮、鶴岡八幡宮</small></td></tr>
+      <tr><th>大社</th><td>かつては出雲大社だけの称号。戦後、各系統の総本社などが名乗るようになった。<br><small>例：出雲大社、春日大社、諏訪大社、伏見稲荷大社、住吉大社</small></td></tr>
+      <tr><th>神社</th><td>最も一般的な社号。<br><small>例：八坂神社、氷川神社、白山比咩神社</small></td></tr>
+      <tr><th>社</th><td>小規模な神社や、大きな神社から分霊を受けた社に多い。<br><small>例：神明社、稲荷社</small></td></tr>
+    </table>
+    <h3 style="font-size:22px;margin:48px 0 16px">社格 ── 神社の「格」の歴史</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag">古代〜</span><h3>式内社・一宮</h3><p>『延喜式』に載る式内社や、各国（旧国）で最も格式の高い一宮。今も由緒の目安とされる。</p></div>
+      <div class="card"><span class="tag">明治〜1946</span><h3>近代社格制度</h3><p>官幣社・国幣社（大・中・小）、別格官幣社、府県社・郷社・村社などに序列化された。</p></div>
+      <div class="card"><span class="tag">戦後〜</span><h3>別表神社</h3><p>社格制度は廃止。現在は神社本庁が人事上の区分として「別表神社」を定めている。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6 参拝 ===== -->
+<section id="sanpai">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">六 ／ HOW TO VISIT</div>
+      <h2>参拝の作法</h2>
+      <p>大切なのは形よりも、神さまへの敬意と感謝の心。そのうえで知っておきたい基本の作法です。</p>
+    </div>
+    <div class="steps">
+      <div class="card step"><h3>鳥居で一礼</h3><p>鳥居の前で軽く一礼してから境内へ。帽子は取るのが丁寧です。</p></div>
+      <div class="card step"><h3>参道は端を歩く</h3><p>中央の正中は神さまの通り道。左右どちらかの端を進みます。</p></div>
+      <div class="card step"><h3>手水で清める</h3><p>右手で柄杓を取り左手を清め、持ち替えて右手を。再び右手に持ち、左手に受けた水で口をすすぎ、左手を清め、最後に柄杓を立てて柄を流します。</p></div>
+      <div class="card step"><h3>お賽銭と鈴</h3><p>拝殿の前で軽く会釈し、お賽銭を静かに納め、鈴があれば鳴らします。</p></div>
+      <div class="card step"><h3>二拝二拍手一拝</h3><p>深いお辞儀を2回、胸の高さで2回拍手し、心を込めて祈り、最後にもう一度深くお辞儀をします。</p></div>
+      <div class="card step"><h3>帰りも一礼</h3><p>鳥居を出たら振り返って拝殿の方へ一礼。感謝を伝えて参拝を終えます。</p></div>
+    </div>
+    <div class="bow" aria-label="二拝二拍手一拝">
+      <div><b>二拝</b><small>深く2回お辞儀</small></div>
+      <div><b>二拍手</b><small>2回手を打つ</small></div>
+      <div><b>祈念</b><small>手を合わせて祈る</small></div>
+      <div><b>一拝</b><small>深く1回お辞儀</small></div>
+    </div>
+    <p class="note">※ 出雲大社・宇佐神宮・彌彦神社などでは「二拝四拍手一拝」が伝統の作法です。</p>
+  </div>
+</section>
+
+<!-- ===== 7 祭り ===== -->
+<section id="matsuri">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">七 ／ FESTIVALS &amp; RITES</div>
+      <h2>一年の祭りと人生儀礼</h2>
+      <p>神社のまつりは農耕のリズムとともにあり、また人の一生の節目にも寄り添います。</p>
+    </div>
+    <div class="cal">
+      <div class="card"><div class="m">1月</div><h4>初詣</h4><p>新年の無事と平安を祈る。</p></div>
+      <div class="card"><div class="m">2月17日</div><h4>祈年祭</h4><p>「としごいのまつり」。一年の五穀豊穣を祈る。</p></div>
+      <div class="card"><div class="m">6月30日</div><h4>夏越の大祓</h4><p>茅の輪をくぐり、半年分の罪穢れを祓う。</p></div>
+      <div class="card"><div class="m">夏〜秋</div><h4>例祭</h4><p>各神社で最も重要な祭り。神輿や山車が町を巡る。</p></div>
+      <div class="card"><div class="m">11月15日頃</div><h4>七五三</h4><p>子どもの成長を感謝し、健やかな将来を祈る。</p></div>
+      <div class="card"><div class="m">11月23日</div><h4>新嘗祭</h4><p>その年の新穀を神に供え、収穫に感謝する。</p></div>
+      <div class="card"><div class="m">12月31日</div><h4>年越の大祓</h4><p>一年の穢れを祓い、清らかに新年を迎える。</p></div>
+      <div class="card"><div class="m">毎月</div><h4>月次祭</h4><p>毎月1日・15日などに行われ、朔日参りの習慣も。</p></div>
+    </div>
+    <h3 style="font-size:22px;margin:48px 0 16px">人生儀礼</h3>
+    <div class="grid g4">
+      <div class="card"><h3>初宮参り</h3><p>誕生後はじめて氏神さまに参り、新たな氏子として見守りを願う。</p></div>
+      <div class="card"><h3>厄祓い</h3><p>厄年に災厄を祓う。男性25・42・61歳、女性19・33・37歳など（数え年）。</p></div>
+      <div class="card"><h3>神前結婚式</h3><p>神の前で夫婦の契りを結ぶ。明治以降に広まった形式。</p></div>
+      <div class="card"><h3>神葬祭</h3><p>神道式の葬儀。故人は家の守り神として祀られる。</p></div>
+    </div>
+    <div class="card" style="margin-top:18px"><h3>家庭の神棚</h3><p>神棚は家庭の小さな神社。伊勢神宮のお神札（神宮大麻）を中央に、氏神神社、崇敬する神社のお神札を祀り、米・塩・水を供えて日々感謝を捧げます。</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 8px">神道と神社 ── 八百万の神の国をたずねて</p>
+    <p style="margin:0 0 12px">専門家ではない個人が、動画や公開資料をもとに学んだことを整理した個人的なまとめです。内容の正確性を保証するものではありません。</p>
+    <a class="back" href="../">← m-note トップ</a>
+  </div>
+</footer>
+
+<script>
+const LINEAGES = [
+  {n:"八幡",y:"はちまん",hq:"宇佐神宮（大分）",god:"八幡大神（応神天皇）・比売大神・神功皇后",
+   t:"全国で最も多い神社の系統。神仏習合の中で「八幡大菩薩」と称され、源氏の氏神として武士の信仰を集めた。石清水八幡宮・鶴岡八幡宮も名高い。",f:["勝負","厄除"],c:["武運","厄除け","国家鎮護"]},
+  {n:"伊勢（神明）",y:"いせ・しんめい",hq:"伊勢神宮（三重）",god:"天照大御神（内宮）・豊受大御神（外宮）",
+   t:"皇室の祖神であり最高神アマテラスを祀る。「神明社」「皇大神社」なども同系統。江戸時代には「お伊勢参り」が大流行した。",f:["縁結","商売"],c:["国家安泰","家内安全","五穀豊穣"]},
+  {n:"天神",y:"てんじん",hq:"太宰府天満宮（福岡）・北野天満宮（京都）",god:"菅原道真（天満大自在天神）",
+   t:"左遷の地で亡くなった道真は、都に災厄をもたらす怨霊として恐れられ、やがて神として祀られた。稀代の学者であったことから学問の神に。",f:["学業"],c:["学業成就","合格祈願","書道"]},
+  {n:"稲荷",y:"いなり",hq:"伏見稲荷大社（京都）",god:"宇迦之御魂大神ほか",
+   t:"「稲が生る」に由来する食物・穀物の神。キツネは神の使い（神使）。農業から商業・工業へとご利益を広げ、屋敷神としても身近な存在。",f:["商売"],c:["五穀豊穣","商売繁盛","産業興隆"]},
+  {n:"熊野",y:"くまの",hq:"熊野三山（和歌山）",god:"家都美御子大神・熊野速玉大神・熊野夫須美大神",
+   t:"本宮・速玉・那智の三社からなる神仏習合の聖地。平安期の上皇たちも「蟻の熊野詣」と呼ばれるほど参詣した。導きの神使は八咫烏。",f:["厄除","縁結"],c:["よみがえり","導き","厄除け"]},
+  {n:"諏訪",y:"すわ",hq:"諏訪大社（長野）",god:"建御名方神・八坂刀売神",
+   t:"国譲り神話でタケミカヅチと力比べをした建御名方神を祀る。武田信玄らも崇敬した軍神・風の神。7年目ごとの御柱祭が有名。",f:["勝負","商売"],c:["武運長久","勝負運","農耕守護"]},
+  {n:"八坂（祇園）",y:"やさか・ぎおん",hq:"八坂神社（京都）",god:"素戔嗚尊（牛頭天王）・櫛稲田姫命・八柱御子神",
+   t:"スサノオファミリーを祀る。かつては疫病をもたらす牛頭天王と習合し、その力で疫病を防ぐと信仰された。祇園祭は疫病退散の祭り。",f:["厄除","縁結"],c:["疫病退散","厄除け","縁結び"]},
+  {n:"氷川",y:"ひかわ",hq:"武蔵一宮 氷川神社（埼玉）",god:"須佐之男命・稲田姫命・大己貴命",
+   t:"埼玉・東京を中心に分布する関東ならではの系統。社名は出雲の「簸川（ひいかわ）」に由来するとされ、見沼の水神信仰とも結びつく。",f:["海","縁結","厄除"],c:["家内安全","縁結び","水の恵み"]},
+  {n:"白山",y:"はくさん",hq:"白山比咩神社（石川）",god:"白山比咩大神（菊理媛神）・伊弉諾尊・伊弉冉尊",
+   t:"霊峰白山への山岳信仰から始まる。菊理媛神は、黄泉の国で争うイザナギ・イザナミの仲を取り持ったとされる神。修験道とともに全国へ。",f:["縁結"],c:["縁結び","和合","五穀豊穣"]},
+  {n:"日吉（山王）",y:"ひよし・さんのう",hq:"日吉大社（滋賀）",god:"大山咋神・大己貴神",
+   t:"比叡山の地主神。延暦寺の守護神「山王権現」として天台密教とともに広まった。神使は猿で、「魔が去る」「勝る」に通じる。",f:["厄除","商売"],c:["方除け","厄除け","魔除け"]},
+  {n:"春日",y:"かすが",hq:"春日大社（奈良）",god:"武甕槌命・経津主命・天児屋根命・比売神",
+   t:"藤原氏の氏神として4柱の神を祀り、藤原氏の繁栄とともに全国に広がった。神使は鹿で、奈良公園の鹿はその象徴。",f:["勝負","縁結"],c:["開運","家内安全","出世"]},
+  {n:"愛宕",y:"あたご",hq:"愛宕神社（京都）",god:"火産霊命（迦具土神）ほか",
+   t:"京都・愛宕山の火の神を祀る防火の神。神仏習合期には武将に人気の「勝軍地蔵」を本地仏とした。「火迺要慎」のお札が有名。",f:["厄除","勝負"],c:["火伏せ","防火","勝運"]},
+  {n:"鹿島",y:"かしま",hq:"鹿島神宮（茨城）",god:"武甕槌大神",
+   t:"国譲り神話で活躍した最強の雷神・剣の神タケミカヅチを祀る。武道の神として剣術家の信仰を集めた。地震を鎮める「要石」も有名。",f:["勝負","厄除"],c:["必勝","武道上達","地震除け"]},
+  {n:"金刀比羅",y:"ことひら",hq:"金刀比羅宮（香川）",god:"大物主神・崇徳天皇",
+   t:"「こんぴらさん」。金毘羅はガンジス川のワニの神クンビーラに由来する仏教の守護神。海上交通の守り神として船乗りに崇敬された。",f:["海","商売"],c:["航海安全","大漁","商売繁盛"]},
+  {n:"住吉",y:"すみよし",hq:"住吉大社（大阪）",god:"底筒男命・中筒男命・表筒男命・神功皇后",
+   t:"イザナギの禊から生まれた海の神「住吉三神」。神功皇后の渡海を守ったとされ、航海・港の守護神に。和歌の神としても知られる。",f:["海","厄除"],c:["航海安全","祓い","和歌"]},
+  {n:"浅間",y:"せんげん・あさま",hq:"富士山本宮浅間大社（静岡）",god:"木花之佐久夜毘売命",
+   t:"日本一の霊峰・富士山を御神体とする。噴火を鎮める美しき女神を祀り、火中で出産した神話から安産の神としても信仰される。",f:["厄除","縁結"],c:["火難除け","安産","子授け"]},
+];
+const grid=document.getElementById('linGrid');
+grid.innerHTML=LINEAGES.map((l,i)=>`
+  <article class="card lin" data-f="${l.f.join(' ')}">
+    <div class="top"><h3>${l.n}<small style="font-family:inherit;font-size:12px;color:var(--ink-2);font-weight:400;display:block;letter-spacing:.1em">${l.y}</small></h3><span class="no">${String(i+1).padStart(2,'0')}</span></div>
+    <dl><dt>総本社</dt><dd>${l.hq}</dd><dt>主祭神</dt><dd>${l.god}</dd></dl>
+    <p>${l.t}</p>
+    <div class="chips">${l.c.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+  </article>`).join('');
+
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  const f=b.dataset.f;
+  grid.querySelectorAll('.lin').forEach(c=>{c.hidden=!(f==='all'||c.dataset.f.split(' ').includes(f))});
+});
+
+// 境内図の連動ハイライト
+function hl(k){document.querySelectorAll('[data-k]').forEach(el=>el.classList.toggle('on',el.dataset.k===k))}
+document.querySelectorAll('[data-k]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>hl(el.dataset.k));
+  el.addEventListener('click',()=>hl(el.dataset.k));
+});
+
+// テーマ切替
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme'); if(t) root.dataset.theme=t;}catch(e){}
+document.getElementById('themeBtn').addEventListener('click',()=>{
+  const dark = root.dataset.theme ? root.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+});
+</script>
+</body>
+</html>
