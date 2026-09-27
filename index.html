@@ -90,6 +90,20 @@ section:nth-of-type(even){background:var(--bg-2)}
 .note{font-size:13px;color:var(--ink-2);margin-top:20px}
 .pull{font-family:"Noto Serif JP",serif;font-size:clamp(20px,3vw,26px);border-left:4px solid var(--shu);padding:6px 0 6px 20px;margin:0 0 36px;max-width:780px}
 
+
+/* ---------- teachings ---------- */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:700px){.words{grid-template-columns:1fr}}
+.word{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.word .kanji{writing-mode:vertical-rl;font-family:"Noto Serif JP",serif;font-weight:900;font-size:26px;color:var(--shu);letter-spacing:.12em;line-height:1.1;border-right:1px solid var(--line);padding-right:14px;min-height:5.5em}
+.word h3{font-size:19px}
+.word .yomi{font-size:12px;color:var(--ink-2);letter-spacing:.1em}
+.koryo{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.koryo li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.koryo .k{font-family:"Noto Serif JP",serif;font-size:26px;color:var(--shu);font-weight:900;text-align:center;line-height:1.2}
+.koryo b{display:block;font-family:"Noto Serif JP",serif;font-size:17px}
+.koryo span{color:var(--ink-2);font-size:14px}
+
 /* ---------- timeline ---------- */
 .timeline{position:relative;margin:0;padding:0;list-style:none}
 .timeline::before{content:"";position:absolute;left:118px;top:6px;bottom:6px;width:2px;background:var(--line)}
@@ -184,6 +198,7 @@ footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
     </a>
     <nav class="links" aria-label="ページ内リンク">
       <a href="#shinto">神道とは</a>
+      <a href="#oshie">教え</a>
       <a href="#history">歴史</a>
       <a href="#precinct">境内</a>
       <a href="#lineage">16系統</a>
@@ -256,11 +271,47 @@ footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
   </div>
 </section>
 
+<!-- ===== 1.5 教え ===== -->
+<section id="oshie">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num">二 ／ TEACHINGS</div>
+      <h2>神道の教え</h2>
+      <p>神道には開祖も、キリスト教の聖書や仏教の経典にあたる絶対的な教典もありません。教えは言葉で説くより、まつりや暮らしの作法の中で受け継がれてきました。古くから「言挙げせず」──ことさら言葉で主張しない──ことが美徳とされてきたのもそのためです。それでも、そこには大切にされてきた価値観がはっきりとあります。</p>
+    </div>
+    <div class="words">
+      <div class="card word"><div class="kanji">惟神の道</div><div><div class="yomi">かんながらのみち</div><h3>神の心のままに生きる</h3><p>人の小賢しい計らいを離れ、神々が示す自然の道理に沿って生きること。神道そのものを指す言葉としても使われます。</p></div></div>
+      <div class="card word"><div class="kanji">敬神崇祖</div><div><div class="yomi">けいしんすうそ</div><h3>神を敬い、祖先を尊ぶ</h3><p>自分の命は神々と祖先から連綿と受け継がれてきたもの。その恵みと恩に感謝し、まつりを絶やさないことが基本の姿勢です。</p></div></div>
+      <div class="card word"><div class="kanji">清明心</div><div><div class="yomi">きよきあかきこころ</div><h3>清く明るい心</h3><p>私心や偽りのない、澄んだ心。古代から重んじられ、のちに「浄明正直（じょうめいせいちょく）」──清く、明るく、正しく、まっすぐに、という徳目へと受け継がれました。</p></div></div>
+      <div class="card word"><div class="kanji">禊祓</div><div><div class="yomi">みそぎはらえ</div><h3>穢れを祓い、本来に還る</h3><p>神道では、人はもともと清らかな存在であり、罪や穢れは外から付くものと考えます。だからこそ祓えば元の清らかさに戻れる。「原罪」の考え方とは対照的です。</p></div></div>
+      <div class="card word"><div class="kanji">産霊</div><div><div class="yomi">むすひ</div><h3>生み出し、結ぶ力</h3><p>万物を生み成長させる神秘的な力。「むすこ」「むすめ」「苔むす」の「むす」にも通じ、縁結びの信仰もこの考え方につながります。</p></div></div>
+      <div class="card word"><div class="kanji">中今</div><div><div class="yomi">なかいま</div><h3>いまを生きる</h3><p>過去と未来の真ん中にある「いま」を最良の時として、精一杯生きること。遠い来世より、この世の生を肯定するのが神道の特徴です。</p></div></div>
+      <div class="card word"><div class="kanji">常若</div><div><div class="yomi">とこわか</div><h3>常に若々しく新しく</h3><p>伊勢神宮が20年ごとに社殿を建て替える式年遷宮に象徴される考え方。古いものを新しく造り替えることで、いのちの瑞々しさを永遠に保ちます。</p></div></div>
+      <div class="card word"><div class="kanji">言霊</div><div><div class="yomi">ことだま</div><h3>言葉に宿る力</h3><p>口にした言葉は現実に働きかけると考えられてきました。神に奏上する祝詞（のりと）が美しく正しい言葉で綴られるのはそのためです。</p></div></div>
+    </div>
+
+    <h3 style="font-size:22px;margin:48px 0 8px">敬神生活の綱領</h3>
+    <p style="color:var(--ink-2);margin:0 0 18px;max-width:760px">神社本庁が1956年に定めた、神道を信仰する人の生活の指針です。戦後の神社界が「教え」を言葉にした数少ない例で、3つの柱からなります（以下は要旨）。</p>
+    <ol class="koryo">
+      <li><div class="k">一</div><div><b>感謝とまつり</b><span>神の恵みと祖先の恩に感謝し、清く明るい誠の心でまつりに励むこと。</span></div></li>
+      <li><div class="k">二</div><div><b>世のため人のための奉仕</b><span>世の中と人々のために尽くし、神の御心を受けて、よりよい世をつくり固めていくこと。</span></div></li>
+      <li><div class="k">三</div><div><b>和と共存共栄</b><span>互いに睦み和らぎ、国の繁栄と世界の人々の共存共栄を祈ること。</span></div></li>
+    </ol>
+
+    <h3 style="font-size:22px;margin:48px 0 16px">暮らしの中に生きる教え</h3>
+    <div class="grid g3">
+      <div class="card"><h3>「いただきます」</h3><p>食べ物のいのちと、それを育んだ神々の恵みへの感謝。まつりの後に神と同じものを食べる「直会（なおらい）」の心に通じます。</p></div>
+      <div class="card"><h3>「おかげさま」</h3><p>自分が生かされているのは目に見えない多くの力のおかげ。神の恩恵を「恩頼（みたまのふゆ）」と呼び、感謝を忘れないことを説きます。</p></div>
+      <div class="card"><h3>「もったいない」</h3><p>あらゆるものに神が宿るという感覚は、物を大切にし、自然と共に生きる倫理として日常に根づいています。</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 2 歴史 ===== -->
 <section id="history">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">二 ／ HISTORY</div>
+      <div class="num">三 ／ HISTORY</div>
       <h2>神道と神社の歩み</h2>
       <p>神道は時代ごとに仏教・儒教・道教と交わりながら、その姿を変えてきました。「日本古来から変わらない宗教」というイメージ自体、近代に形づくられた面があります。</p>
     </div>
@@ -281,7 +332,7 @@ footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
 <section id="precinct">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">三 ／ PRECINCT</div>
+      <div class="num">四 ／ PRECINCT</div>
       <h2>神社の境内を歩く</h2>
       <p>鳥居をくぐった先は神域。番号にカーソルを合わせると、それぞれの役割がわかります。</p>
     </div>
@@ -358,7 +409,7 @@ footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
 <section id="lineage">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">四 ／ LINEAGES</div>
+      <div class="num">五 ／ LINEAGES</div>
       <h2>全国に広がる神社の16系統</h2>
       <p>近所の「八幡神社」も「稲荷神社」も、総本社から神の分霊（わけみたま）を迎えた勧請（かんじょう）によって全国に広がりました。名前を見れば、どんな神が祀られているかがわかります。</p>
     </div>
@@ -380,7 +431,7 @@ footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
 <section id="shago">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">五 ／ TITLES</div>
+      <div class="num">六 ／ TITLES</div>
       <h2>「神宮」「大社」「神社」── 社号のちがい</h2>
       <p>神社の名前の最後につく「社号」にも意味があります。これを知れば神社めぐりがもっと楽しくなります。</p>
     </div>
@@ -404,7 +455,7 @@ footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
 <section id="sanpai">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">六 ／ HOW TO VISIT</div>
+      <div class="num">七 ／ HOW TO VISIT</div>
       <h2>参拝の作法</h2>
       <p>大切なのは形よりも、神さまへの敬意と感謝の心。そのうえで知っておきたい基本の作法です。</p>
     </div>
@@ -430,7 +481,7 @@ footer{padding:40px 0;text-align:center;color:var(--ink-2);font-size:13px}
 <section id="matsuri">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">七 ／ FESTIVALS &amp; RITES</div>
+      <div class="num">八 ／ FESTIVALS &amp; RITES</div>
       <h2>一年の祭りと人生儀礼</h2>
       <p>神社のまつりは農耕のリズムとともにあり、また人の一生の節目にも寄り添います。</p>
     </div>
